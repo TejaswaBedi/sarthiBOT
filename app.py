@@ -6,8 +6,10 @@ from langchain_community.llms.huggingface_hub import HuggingFaceHub
 from langchain.chains.question_answering import load_qa_chain
 from langchain_pinecone import PineconeVectorStore 
 from flask import Flask, request
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 PINECONE_API_KEY = "49d330f0-a127-4534-83e4-be396251e67b"
 
