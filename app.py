@@ -52,6 +52,3 @@ def chat():
         input = output["prompt"]
         result = solve(input)
         return {"answer" : result}
-    
-if __name__ == "__main__":
-    app.run(debug=True)
