@@ -2,3 +2,4 @@ langchain
 flask
 langchain_pinecone
 gunicorn
+langchain-community
