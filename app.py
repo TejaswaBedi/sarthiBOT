@@ -2,9 +2,9 @@ import os
 import pinecone
 from langchain.prompts import PromptTemplate
 from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.llms.huggingface_hub import HuggingFaceHub
 from langchain.chains.question_answering import load_qa_chain
 from langchain_pinecone import PineconeVectorStore 
-from langchain import HuggingFaceHub
 from flask import Flask, request
 
 app = Flask(__name__)
