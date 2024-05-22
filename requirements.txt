@@ -4,3 +4,4 @@ langchain_pinecone
 gunicorn
 langchain-community
 sentence_transformers
+flask_cors
