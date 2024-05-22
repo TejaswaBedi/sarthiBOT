@@ -1,3 +1,4 @@
 langchain
 flask
 langchain_pinecone
+gunicorn
