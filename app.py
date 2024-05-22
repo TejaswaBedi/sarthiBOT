@@ -36,6 +36,7 @@ chain = load_qa_chain(llm, chain_type="stuff")
 
 def solve(queryText):
     docsResult = docSearch.similarity_search(queryText, k=2)
+    print("DocResults : ", docsResult)
     return(chain.run(input_documents=docsResult, question=queryText))
 
 @app.route("/")
@@ -50,5 +51,7 @@ def chat():
     else:
         
         input = output["prompt"]
+        print("Input : ", input)
         result = solve(input)
+        print("Result : ", result)
         return {"answer" : result}
