@@ -4,3 +4,4 @@ flask
 langchain_pinecone
 gunicorn
 langchain_community
+sentence_transformers
