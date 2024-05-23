@@ -1,3 +1,4 @@
+flask_cors
 langchain
 flask
 langchain_pinecone
