@@ -1,10 +1,17 @@
 import os
 import pinecone
 from langchain.prompts import PromptTemplate
+<<<<<<< HEAD
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.chains.question_answering import load_qa_chain
 from langchain_pinecone import PineconeVectorStore 
 from langchain_community.llms.huggingface_hub import HuggingFaceHub
+=======
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.llms.huggingface_hub import HuggingFaceHub
+from langchain.chains.question_answering import load_qa_chain
+from langchain_pinecone import PineconeVectorStore 
+>>>>>>> 7b0bf9b12cf0b96048ff79b7c28620fb60654abd
 from flask import Flask, request
 from flask_cors import CORS
 
@@ -38,6 +45,7 @@ chain = load_qa_chain(llm, chain_type="stuff")
 
 def solve(queryText):
     docsResult = docSearch.similarity_search(queryText, k=2)
+    print("DocResults : ", docsResult)
     return(chain.run(input_documents=docsResult, question=queryText))
 
 @app.route("/")
@@ -52,8 +60,7 @@ def chat():
     else:
         
         input = output["prompt"]
+        print("Input : ", input)
         result = solve(input)
+        print("Result : ", result)
         return {"answer" : result}
-    
-if __name__ == "__main__":
-    app.run(debug=True)

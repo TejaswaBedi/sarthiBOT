@@ -2,4 +2,10 @@ langchain
 flask
 langchain_pinecone
 gunicorn
+<<<<<<< HEAD
 langchain_community
+=======
+langchain-community
+sentence_transformers
+flask_cors
+>>>>>>> 7b0bf9b12cf0b96048ff79b7c28620fb60654abd
