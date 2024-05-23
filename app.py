@@ -1,13 +1,15 @@
 import os
 import pinecone
 from langchain.prompts import PromptTemplate
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.chains.question_answering import load_qa_chain
 from langchain_pinecone import PineconeVectorStore 
-from langchain import HuggingFaceHub
+from langchain_community.llms.huggingface_hub import HuggingFaceHub
 from flask import Flask, request
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 PINECONE_API_KEY = "49d330f0-a127-4534-83e4-be396251e67b"
 
@@ -52,3 +54,6 @@ def chat():
         input = output["prompt"]
         result = solve(input)
         return {"answer" : result}
+    
+if __name__ == "__main__":
+    app.run(debug=True)
